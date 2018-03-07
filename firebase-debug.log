@@ -1,0 +1,77 @@
+[debug] [2018-03-07T18:15:50.466Z] ----------------------------------------------------------------------
+[debug] [2018-03-07T18:15:50.467Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2018-03-07T18:15:50.467Z] CLI Version:   3.17.4
+[debug] [2018-03-07T18:15:50.467Z] Platform:      darwin
+[debug] [2018-03-07T18:15:50.467Z] Node Version:  v8.9.4
+[debug] [2018-03-07T18:15:50.468Z] Time:          Wed Mar 07 2018 10:15:50 GMT-0800 (PST)
+[debug] [2018-03-07T18:15:50.468Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-03-07T18:15:50.479Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-03-07T18:15:50.479Z] > authorizing via signed-in user
+[debug] [2018-03-07T18:15:50.480Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-03-07T18:15:50.480Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/uTfjNYMQO4CAn90Q0EhnXl9fFP6joIb7eFUq_edFCBg',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Wed Mar 07 2018 10:15:50 GMT-0800 (PST)
+[debug] [2018-03-07T18:15:50.843Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-07T18:15:50.852Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/train-time-5df0b  
+  
+ Wed Mar 07 2018 10:15:50 GMT-0800 (PST)
+[debug] [2018-03-07T18:15:51.342Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-07T18:15:51.343Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/train-time-5df0b/tokens  
+  
+ Wed Mar 07 2018 10:15:51 GMT-0800 (PST)
+[debug] [2018-03-07T18:15:52.055Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'train-time-5df0b'...
+[info] 
+[info] i  deploying database, hosting
+[info] i  database: checking rules syntax...
+[debug] [2018-03-07T18:15:52.488Z] >>> HTTP REQUEST PUT https://train-time-5df0b.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}
+ 
+ Wed Mar 07 2018 10:15:52 GMT-0800 (PST)
+[debug] [2018-03-07T18:15:52.795Z] <<< HTTP RESPONSE 200
+[info] ✔  database: rules syntax for database train-time-5df0b is valid
+[info] i  hosting: preparing public directory for upload...
+[debug] [2018-03-07T18:15:52.819Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/train-time-5df0b/uploads/-L70fIf9MKbw_LgZ2X-D?fileCount=1&message=  
+  
+ Wed Mar 07 2018 10:15:52 GMT-0800 (PST)
+[debug] [2018-03-07T18:15:53.645Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-07T18:15:53.645Z] [hosting] .tgz uploaded successfully, waiting for extraction
+[info] ✔  hosting: 1 files uploaded successfully
+[info] i  database: releasing rules...
+[debug] [2018-03-07T18:15:54.632Z] >>> HTTP REQUEST PUT https://train-time-5df0b.firebaseio.com/.settings/rules.json  
+ {
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}
+ 
+ Wed Mar 07 2018 10:15:54 GMT-0800 (PST)
+[debug] [2018-03-07T18:15:55.013Z] <<< HTTP RESPONSE 200
+[info] ✔  database: rules for database train-time-5df0b released successfully
+[debug] [2018-03-07T18:15:55.015Z] >>> HTTP REQUEST POST https://deploy.firebase.com/v1/projects/train-time-5df0b/releases  
+ { hosting: 
+   { public: 'public',
+     ignore: [ 'firebase.json', '**/.*', '**/node_modules/**' ],
+     rewrites: [ [Object] ],
+     version: '-L70fIf9MKbw_LgZ2X-D',
+     prefix: '-L70fIf9MKbw_LgZ2X-D/',
+     manifest: [] } } 
+ Wed Mar 07 2018 10:15:55 GMT-0800 (PST)
+[debug] [2018-03-07T18:17:10.507Z] Error: connect ETIMEDOUT 23.251.151.130:443
+    at Object._errnoException (util.js:1022:11)
+    at _exceptionWithHostPort (util.js:1044:20)
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1182:14)
+[error] 
+[error] Error: Server Error. connect ETIMEDOUT 23.251.151.130:443
